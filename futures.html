@@ -8,8 +8,24 @@
 </head>
 <body>
     <div id="img1">
-        <p>0.001263</p>
+        <p id="dollar-a" style="
+            top: 456px; left: 78px;
+            font-size: 24pt; letter-spacing: 0.2px;
+            background-color: #22262f; color: #898e9b;
+            ">0.001263</p>
+        <p id="dollar-v" style="
+            top: 695px; left: 72px;
+            font-size: 20pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: #898e9b;
+            padding-right: 50px;
+        ">0.001263</span></p>
+        <p id="dollar-p" style="
+            top: 695px; left: 532px;
+            font-size: 20pt; letter-spacing: 0.5px;
+            /* background-color: #22262f; color: #898e9b; */
+        ">0.000000</p>
     </div>
+    <div id="bg"></div>
 </body>
 
 <style>
@@ -36,27 +52,22 @@
         width: 100%;
         height: 100%;
         background-size: contain;
+        background-repeat: no-repeat;
     }
 
-    #img1 p {
+    p {
         color: white;
-        top: 589px;
-        left: 78px;
         position: absolute;
-        font-size: 24pt;
+    }
+    
+    #bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         background-color: #22262f;
-        color: #898e9b;
-        letter-spacing: 0.2px;
+        z-index: -1;
     }
 </style>
 
-<script>
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function() {
-            navigator.serviceWorker
-            .register("/serviceWorker.js")
-            .then(res => console.log("service worker registered"))
-            .catch(err => console.log("service worker not registered", err))
-        })
-    }
-</script>

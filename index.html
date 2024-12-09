@@ -7,7 +7,37 @@
 </head>
 <body>
 <h1>cdkh v.2024-12-06</h1>
+<h3>Goto <a href="futures.html">Futures.html</a></h3>
+<form>
+    <label for="v">V (Wallet Balance) </label><input type="text" id="v">
+    <br>
+    <input type="submit" onclick="onSubmit()">
+</form>
 
 </body>
+
+<script>
+    lst = ['v']
+    for (let word of lst) {
+        document.getElementById(word).value = localStorage.getItem(word);
+    }
+    function onSubmit() {
+        for (let word of lst) {
+            localStorage.setItem(word, document.getElementById(word).value);
+            alert(localStorage.getItem(word));
+        }
+    }
+</script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker
+            .register("/serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+        })
+    }
+</script>
 
 <!-- 430 x 932 - 176 = 756 -->
