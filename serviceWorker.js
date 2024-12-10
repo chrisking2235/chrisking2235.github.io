@@ -3,7 +3,11 @@ const assets = [
   "/",
   "/futures.html",
   "/index.html",
-  "/KakaoTalk_20241205_142214954.jpg"
+  "/KakaoTalk_20241205_142214954.jpg",
+  "/analysis.png",
+  "/positions.js",
+  "/right_arrow.png",
+  "/USDT arrow.png",
 ]
 
 self.addEventListener("install", installEvent => {

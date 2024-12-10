@@ -7,25 +7,32 @@
     <meta http-equiv="pragma" content="no-cache" />
 </head>
 <body>
-<h1>cdkh v.2024-12-09</h1>
+<h1>cdkh v.2024-12-10</h1>
 <h3>Goto <a href="futures.html">Futures.html</a></h3>
 <form>
-    <label for="v">V (Wallet Balance) </label><input type="text" id="v">
-    <br>
+    <label for="v">V (Wallet Balance) </label><input type="text" id="v"> <br>
+    <label for="p">P (Unrealized PNL) </label><input type="text" id="p"> <br>
+    <label for="today_pnl">Today PNL </label><input type="text" id="today_pnl"> <br>
+    <label for="entry_price">Entry Price </label><input type="text" id="entry_price"> <br>
+    <label for="margin">Margin </label><input type="text" id="margin"> <br>
+    <label for="leverage">Leverage (숫자만/3,5,15,25,50,125) </label><input type="text" id="leverage"> <br>
+    
+    <hr>
+
     <input type="submit" onclick="onSubmit()">
 </form>
 
 </body>
 
 <script>
-    lst = ['v']
+    lst = ['v', 'p', 'today_pnl', 'entry_price', 'margin', 'leverage']
     for (let word of lst) {
         document.getElementById(word).value = localStorage.getItem(word);
     }
     function onSubmit() {
         for (let word of lst) {
             localStorage.setItem(word, document.getElementById(word).value);
-            alert(localStorage.getItem(word));
+            // alert(localStorage.getItem(word));
         }
     }
 </script>

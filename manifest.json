@@ -1,7 +1,7 @@
 {
     "name": "Binance",
     "short_name": "Binance",
-    "start_url": "futures.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#22262f",
     "theme_color": "#22262f",

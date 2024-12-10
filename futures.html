@@ -1,17 +1,49 @@
 <head>
-    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <!-- <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" /> -->
 </head>
 <body>
     <div id="img1">
+        <p id="a" style="
+            top: 312px; left: 35px;
+            font-size: 52pt; font-weight: 900; letter-spacing: 2.4px;
+            background-color: #22262f; color: #ececef;
+            padding-right: 100px;
+            ">0 <img src="USDT arrow.png" width="106" style="
+            /* opacity: 0.5;  */
+            transform: translateY(6px);"></p>
+        <p id="v" style="
+            top: 643px; left: 34px;
+            font-size: 24pt; letter-spacing: 0.2px;
+            background-color: #22262f; color: white;
+            padding-right: 50px;
+            /* color: red; */
+            ">2.23</p>
+        <p id="p" style="
+            top: 643px; left: 494px;
+            font-size: 24pt; letter-spacing: 0.2px;
+            background-color: #22262f; color: white;
+            padding-right: 50px;
+            /* color: red; */
+            ">0</p>
         <p id="dollar-a" style="
             top: 456px; left: 78px;
             font-size: 24pt; letter-spacing: 0.2px;
             background-color: #22262f; color: #898e9b;
+            padding-right: 50px;
             ">0.001263</p>
+        <p id="today-pnl" style="
+            top: 515px; left: 349px;
+            font-size: 24pt; letter-spacing: 0.15px;
+            background-color: #22262f; color: #d85661;
+            /* color: skyblue; */
+            padding-right: 100px;
+            " 
+            onclick="openPopup()"
+            >-$1.90 (-41.69%) <img style="opacity: 1; transform: translateX(20px);" width="17" src="right_arrow.png"></p>
         <p id="dollar-v" style="
             top: 695px; left: 72px;
             font-size: 20pt; letter-spacing: 0.5px;
@@ -21,10 +53,106 @@
         <p id="dollar-p" style="
             top: 695px; left: 532px;
             font-size: 20pt; letter-spacing: 0.5px;
-            /* background-color: #22262f; color: #898e9b; */
+            background-color: #22262f; color: #898e9b;
         ">0.000000</p>
+
+        <p id="pnl" style="
+            top: 1313px; left: 34px;
+            font-size: 30pt; font-weight: 700; letter-spacing: 0.8px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: white; */
+        ">0.000000</p>
+
+        <p id="roi" style="
+            top: 1313px; right: 41px;
+            font-size: 30pt; font-weight: 700; letter-spacing: 0.8px;
+            background-color: #22262f; color: #01c082;
+            padding-left: 50px; text-align: right;
+            /* color: white; */
+        ">+0.07%</p>
+
+        <p id="size" style="
+            top: 1433px; left: 34px;
+            font-size: 24pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: white;
+            padding-right: 50px;
+            /* color: red; */
+        ">100.2</p>
+
+        <p id="margin" style="
+            top: 1433px; left: 344px;
+            font-size: 24pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: white;
+            padding-right: 50px;
+            /* color: red; */
+        ">2.05</p>
+
+        <p id="margin_ratio" style="
+            top: 1433px; right: 34px;
+            font-size: 24pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: #01c082;
+            padding-left: 50px; text-align: right;
+            /* color: red; */
+        ">19.58%</p>
+
+        <p id="entry_price" style="
+            top: 1533px; left: 34px;
+            font-size: 24pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: white;
+            padding-right: 50px;
+            /* color: red; */
+        ">100,197.6</p>
+        
+
+        <p id="mark_price" style="
+            top: 1533px; left: 344px;
+            font-size: 24pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: white;
+            padding-right: 50px;
+            /* color: red; */
+        ">100,199.00</p>
+
+        <p id="liq_price" style="
+            top: 1533px; right: 34px;
+            font-size: 24pt; letter-spacing: 0.5px;
+            background-color: #22262f; color: white;
+            padding-left: 50px; text-align: right;
+            /* color: red; */
+        ">98,546.73</p>
+    </div>
+
+    <div id="img2">
+        <div id="back" style="
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            /* background-color: red; */
+            " onclick="closePopup()"></div>
+        <div id="calendar">
+            <div class="row">
+                <div class="cal"></div>
+                <div class="cal"></div>
+                <div class="cal"></div>
+                <div class="cal"></div>
+                <div class="cal"></div>
+                <div class="cal red">
+                    <p class="date">5</p>
+                    <p class="percent red">-2,893.47</p>
+                </div>
+                <div class="cal green">
+                    <p class="date">6</p>
+                    <p class="percent green">+22,184.34</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
     </div>
     <div id="bg"></div>
+    <div id="loading-wrapper">
+        <div id="loading"></div>
+    </div>
 </body>
 
 <style>
@@ -37,12 +165,17 @@
     } */
     @import url(https://db.onlinewebfonts.com/c/d05c19ccecf7003d248c60ffd6b5e8f7?family=Binance+PLEX);
 
+    @font-face {
+        font-family: "San Francisco";
+        font-weight: 400;
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+    }
 
     body {
         width: 100%;
         height: 100%;
         margin: 0;
-        font-family: 'Binance PLEX', sans-serif;
+        font-family: 'Binance PLEX', "San Francisco", sans-serif;
         overflow: hidden;
     }
 
@@ -52,6 +185,30 @@
         height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
+        
+        /* transition: left 0.5s cubic-bezier(.25,0.1,.25,1); */
+        transition: 0.5s;
+    }
+
+    #img1.go {
+        transform: translateX(-30%);
+    }
+
+    #img2 {
+        background-image: url("./analysis.png");
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: -5px 0 black;
+        position: absolute;
+        top: 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+    }
+
+    #img2.go {
+        transform: translateX(0);
     }
 
     p {
@@ -68,5 +225,129 @@
         background-color: #22262f;
         z-index: -1;
     }
+
+    #calendar {
+        position: absolute;
+        top: 1294; left: 35;
+        width: 93.02%; height: 30.56%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* background-color: #22262f; */
+        /* background-color: red; */
+        /* opacity: 0.3; */
+        
+    }
+
+    .row {
+        width: 100%;
+        height: 121px;
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .cal {
+        height: 100%;
+        aspect-ratio: 1;
+        /* background-color: black; */
+        border-radius: 14px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cal.red {
+        background-color: #382835;
+    }
+    .cal.green {
+        background-color: #1a3639;
+    }
+
+    .date {
+        position: relative;
+        font-size: 21pt;
+        margin: 0;
+        top: 21px;
+        /* color: red; */
+    }
+
+    .percent {
+        position: relative;
+        font-size: 17pt;
+        margin: 0;
+        top: 29px;
+        color: 727886;
+    }
+    .percent.red {
+        color: #e6385f;
+    }
+    .percent.green {
+        color: #01c082;
+    }
+
+    body {
+        overflow: hidden;
+    }
+    body::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+    #loading-wrapper {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        /* visibility: hidden; */
+        pointer-events: none;
+    }
+    /* #loading-wrapper.show {
+        visibility: visible;
+    } */
+
+    #loading {
+        width: 120px;
+        height: 120px;
+        background-color: #414654;
+        border-radius: 30px;
+        transform: rotate(45deg) scale(1.25);
+        opacity: 0;
+        pointer-events: none;
+    }
+    #loading.show {
+        opacity: 0.7;
+        transform: rotate(45deg) scale(1);
+        transition: 0.1s;
+    }
+
 </style>
 
+<script>
+    function openPopup() {
+        document.getElementById('img1').classList.add('go');
+        document.getElementById('img2').classList.add('go');
+        loading(500);
+    }
+    function closePopup() {
+        document.getElementById('img1').classList.remove('go');
+        document.getElementById('img2').classList.remove('go');
+    }
+
+    function loading(delay) {
+        
+        document.getElementById('loading-wrapper').classList.add('show');
+        document.getElementById('loading').classList.add('show');
+
+        setTimeout(() => {
+            document.getElementById('loading-wrapper').classList.remove('show');
+            document.getElementById('loading').classList.remove('show');
+        }, delay);
+    }
+
+</script>
+<script src="positions.js"></script>
