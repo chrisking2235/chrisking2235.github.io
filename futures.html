@@ -1,15 +1,8 @@
-<head>
-    <!-- <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" /> -->
-</head>
 <body>
     <div id="img1">
         <p id="a" style="
             top: 312px; left: 35px;
-            font-size: 52pt; font-weight: 900; letter-spacing: 2.4px;
+            font-size: 52pt; /*font-weight: 900;*/ letter-spacing: 2.4px;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
             ">0 <img src="USDT arrow.png" width="106" style="
@@ -98,7 +91,7 @@
 
         <p id="pnl" style="
             top: 1313px; left: 34px;
-            font-size: 30pt; font-weight: 700; letter-spacing: 0.8px;
+            font-size: 30pt; /*font-weight: 700;*/ letter-spacing: 0.8px;
             background-color: #22262f; color: #01c082;
             padding-right: 50px;
             /* color: white; */
@@ -106,7 +99,7 @@
 
         <p id="roi" style="
             top: 1313px; right: 41px;
-            font-size: 30pt; font-weight: 700; letter-spacing: 0.8px;
+            font-size: 30pt; /*font-weight: 700;*/ letter-spacing: 0.8px;
             background-color: #22262f; color: #01c082;
             padding-left: 50px; text-align: right;
             /* color: white; */
@@ -178,7 +171,7 @@
         ">
             <p id="today-pnl-2" style="
                 position: relative;
-                font-size: 52pt; font-weight: 700; letter-spacing: 1.7px;
+                font-size: 52pt; /*font-weight: 700;*/ letter-spacing: 1.7px;
                 background-color: #22262f; color: #01c082;
                 /* color: greenyellow; */
             ">-99.98%</p>
@@ -196,7 +189,7 @@
         
         <p id="7d-pnl" style="
             top: 395px; left: 35px;
-            font-size: 26pt; font-weight: 700; letter-spacing: 1.3px;
+            font-size: 26pt; /*font-weight: 700;*/ letter-spacing: 1.3px;
             background-color: #22262f; color: #01c082;
             padding-right: 50px;
             /* color: yellowgreen; */
@@ -212,7 +205,7 @@
         
         <p id="30d-pnl" style="
             top: 395px; left: 346px;
-            font-size: 26pt; font-weight: 700; letter-spacing: 1.3px;
+            font-size: 26pt; /*font-weight: 700;*/ letter-spacing: 1.3px;
             background-color: #22262f; color: #01c082;
             padding-right: 50px;
             /* color: yellowgreen; */
@@ -228,7 +221,7 @@
         
         <p id="lifetime-pnl" style="
             top: 395px; left: 654px;
-            font-size: 26pt; font-weight: 700; letter-spacing: 1.3px;
+            font-size: 26pt; /*ont-weight: 700;*/ letter-spacing: 1.3px;
             background-color: #22262f; color: #01c082;
             padding-right: 50px;
             /* color: yellowgreen; */
@@ -241,6 +234,28 @@
             padding-right: 50px;
             /* color: yellowgreen; */
         ">USD</p>
+
+
+
+        <div id='period-bg'></div>
+        <p class="period sel" style="
+            top: 574px; left: 53px;
+            " id="7d" onclick="changePeriod(this, 0)">7D</p>
+        <p class="period" style="
+            top: 574px; left: 141px;
+        " id="1m" onclick="changePeriod(this, 1)">1M</p>
+        <p class="period" style="
+            top: 574px; left: 232px;
+            " id="3m" onclick="changePeriod(this, 2)">3M</p>
+        <p class="period" style="
+            top: 554px; left: 305px;
+            font-size: 20pt; /*font-weight: 700;*/
+            color: #888e9b;
+            background-color: #22262f;
+            padding: 20px;
+        " id="1y" onclick="/*changePeriod(this, 3)*/ alert('1Y 안누른다며...??')">1Y</p>
+
+
 
         <p id="total-profit" style="
             top: 664px; right: 35px;
@@ -299,6 +314,7 @@
         margin: 0;
         font-family: 'Binance PLEX', "San Francisco", sans-serif;
         overflow: hidden;
+        background-color: #22262f;
     }
 
     #img1 {
@@ -319,7 +335,8 @@
     #img2 {
         background-image: url("./analysis.png");
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
+        height: 110%;
         background-size: contain;
         background-repeat: no-repeat;
         box-shadow: -5px 0 black;
@@ -327,6 +344,8 @@
         top: 0;
         transform: translateX(100%);
         transition: 0.5s;
+        /* overflow-y: scroll; */
+        touch-action: pan-y;
     }
 
     #img2.go {
@@ -409,9 +428,6 @@
         color: #01c082;
     }
 
-    body {
-        overflow: hidden;
-    }
     body::-webkit-scrollbar { 
         display: none;  /* Safari and Chrome */
     }
@@ -478,30 +494,64 @@
         margin-top: 3px;                
     }
 
+    #period-bg {
+        position: absolute;
+        top: 590px; left: 35px;
+        width: 68px; height: 55px;
+        background-color: #2c313c;
+        /* background-color: red; */
+        /* opacity: 0.3; */
+        border-radius: 13px;
+        transition: 0.1s;
+
+        /* 7D: 35 / 1M: 125 / 3M: 216 / 1Y: 306px*/
+    }
+
+    .period {
+        font-size: 20pt; /*font-weight: 700;*/
+        color: #888e9b;
+    }
+
+    .period.sel {
+        color: white;
+    }
+
 </style>
 
 <script>
     function openPopup() {
         document.getElementById('img1').classList.add('go');
         document.getElementById('img2').classList.add('go');
-        loading(500);
+        loading();
     }
     function closePopup() {
         document.getElementById('img1').classList.remove('go');
         document.getElementById('img2').classList.remove('go');
     }
 
-    function loading(delay) {
+    const delays = [100, 200, 300]
+    function loading() {
         
         document.getElementById('loading-wrapper').classList.add('show');
         document.getElementById('loading').classList.add('show');
+        
+        refreshPopup();
+
+        delay = delays[Math.floor((Math.random() *100) % 3)];
 
         setTimeout(() => {
             document.getElementById('loading-wrapper').classList.remove('show');
             document.getElementById('loading').classList.remove('show');
+            document.getElementById('calendar').innerHTML = calendar_storage;
         }, delay);
     }
 
 </script>
 <script src="positions.js"></script>
 <script src="calendar.js"></script>
+
+<!-- <script>
+    setTimeout(() => {
+        location.reload()
+    }, 500);
+</script> -->

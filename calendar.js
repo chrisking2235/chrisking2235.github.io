@@ -57,17 +57,21 @@ cal_data = [
 
             </div>
 */
+let calendar_storage = '';
 function gen_calendar(month, range_start, range_end, ) {
-    let str = '', sum=0;
+    let str = '';
     for (let i=0;i<5;i++) {
         str += '<div class="row">'
         for (let j=0;j<7;j++)
         {
             let idx = i*7+j;
             let day = cal_data[month][idx];
-            let date = new Date(2024, month, day);
+            let date = new Date(2024, month-1, day);
             if (!(range_start <= date && date <= range_end) || day == 0)
-                str += '<div class="cal"></div>'
+                {
+                    console.log(date, day)
+                    str += '<div class="cal"></div>'}
+
             else  {
                 if (data[month][day] == 0) str += `<div class="cal" style="justify-content: center;"><p class="date" style="top: 0;">${day}</p></div>`
                 else if (data[month][day] > 0) str += 
@@ -80,23 +84,23 @@ function gen_calendar(month, range_start, range_end, ) {
                         <p class="date">${day}</p>
                         <p class="percent red">${floatString(data[month][day])}</p>
                     </div>`
-                sum += data[month][day];
             }
         }
         str += '</div>'
     }
-    return [str, sum];
+    calendar_storage = str;
+    // console.log(calendar_storage)
 }
 
-let rec = gen_calendar(9, new Date(2024, 9, 1), new Date(2024, 9, 31))
-document.getElementById('calendar').innerHTML = rec[0];
-console.log(rec[1])
+gen_calendar(9, new Date(2024, 9, 1), new Date(2024, 9, 31))
+// document.getElementById('calendar').innerHTML = rec[0];
+// console.log(rec[1])
 
 
 // profit, loss
 let lst = [];
-
-for (let period of [7, 30, 90]) {
+let ranges = [7, 30, 90]
+for (let period of ranges) {
     let date = new Date(), now = new Date();
     let profit=0, loss=0;
     for (let i=1;i<=period;i++) {
@@ -109,7 +113,7 @@ for (let period of [7, 30, 90]) {
     lst.push({
         'profit': profit,
         'loss': loss,
-        'total': profit + loss
+        'total': profit - loss
     })
 }
 
@@ -124,10 +128,35 @@ for (let i=9;i<=12;i++) {
 lst.push({
     'profit': profit,
     'loss': loss,
-    'total': profit + loss
+    'total': profit - loss
 })
 
+function refreshPopup() {
+    document.getElementById('calendar').innerHTML = ''
+    document.getElementById('7d-pnl-usd').innerHTML = floatString(lst[0].total);
+    document.getElementById('30d-pnl-usd').innerHTML = floatString(lst[1].total);
+    document.getElementById('lifetime-pnl-usd').innerHTML = floatString(lst[3].total);
+}
 console.log(lst);
+
+let bg_left = [35, 125, 216, 306]
+function changePeriod(elem, idx=3) {
+    document.querySelector('.sel').classList.remove('sel');
+    elem.classList.add('sel')
+    /* 7D: 35 / 1M: 125 / 3M: 216 / 1Y: 306px*/
+    document.getElementById('period-bg').style = `left: ${bg_left[idx]}px;`
+
+    document.getElementById('total-profit').innerHTML = `${floatString(lst[idx].profit)} USD`
+    document.getElementById('total-loss').innerHTML = `${floatString(lst[idx].loss)} USD`
+    document.getElementById('total-total').innerHTML = `${floatString(lst[idx].total)} USD`
+
+
+    let date1 = new Date()
+    date1.setDate(date1.getDate() - ranges[idx]);
+    // console.log(date1, new Date())
+    gen_calendar(12, date1, new Date());
+    loading();
+}
 
 function floatString(str) {
     return parseFloat(str).toLocaleString(undefined, {'minimumFractionDigits':2,'maximumFractionDigits':2});

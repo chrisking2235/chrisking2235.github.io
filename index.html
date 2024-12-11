@@ -1,17 +1,12 @@
 <head>
     <link rel="manifest" href="manifest.json" />
-    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
 </head>
 <body>
-<h1>cdkh v.2024-12-10</h1>
+<h1>cdkh v.2024-12-11</h1>
 <h3>Goto <a href="futures.html">Futures.html</a></h3>
 <form>
     <label for="v">V (Wallet Balance) </label><input type="text" id="v"> <br>
-    <label for="p">P (Unrealized PNL) </label><input type="text" id="p"> <br>
+    <!-- <label for="p">P (Unrealized PNL) </label><input type="text" id="p"> <br> -->
     <label for="today_pnl">Today PNL </label><input type="text" id="today_pnl"> <br>
     <label for="entry_price">Entry Price </label><input type="text" id="entry_price"> <br>
     <label for="margin">Margin </label><input type="text" id="margin"> <br>
@@ -25,7 +20,7 @@
 </body>
 
 <script>
-    lst = ['v', 'p', 'today_pnl', 'entry_price', 'margin', 'leverage', 'exc']
+    lst = ['v', 'today_pnl', 'entry_price', 'margin', 'leverage', 'exc']
     for (let word of lst) {
         document.getElementById(word).value = localStorage.getItem(word);
     }

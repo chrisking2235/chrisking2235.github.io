@@ -49,15 +49,17 @@ async function getUsdtUsd(pair="USDTUSD") {
     return null;
 }
 const v = parseInt(localStorage.getItem('v'))
-document.getElementById('v').innerHTML = v;
+document.getElementById('v').innerHTML = floatString(v);
 
 const entryPrice = parseFloat(localStorage.getItem('entry_price'))
 const margin = parseFloat(localStorage.getItem('margin'))
 const leverage = parseInt(localStorage.getItem('leverage'))
 
-document.getElementById('entry_price').innerHTML = entryPrice;
-document.getElementById('margin').innerHTML = margin;
+document.getElementById('entry_price').innerHTML = floatString(entryPrice);
+document.getElementById('margin').innerHTML = floatString(margin);
 document.getElementById('leverage').innerHTML = `Isolated ${leverage}X`;
+
+let a = 0, pnl = 0;
 
 setInterval(async () => {
     try {
@@ -76,7 +78,7 @@ setInterval(async () => {
         console.log(usdtusd)
 
         const maintenanceMargin = positionSize * currentPrice * maintenanceMarginRate;
-        const pnl = (currentPrice - entryPrice) * positionSize;
+        pnl = (currentPrice - entryPrice) * positionSize;
         const roi = (pnl / margin) * 100;
 
         if (calculatedLiquidationPrice === null) {
@@ -96,7 +98,7 @@ setInterval(async () => {
         document.getElementById("size").innerHTML = `${floatString(margin * leverage)}`;
 
         let p = pnl;
-        let a = v+p;
+        a = v+p;
         
         console.log('v: ' +v +'p: ' +p +'a: '+a)
         document.getElementById('a').innerHTML = floatString(a);

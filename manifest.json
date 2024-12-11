@@ -1,15 +1,15 @@
 {
-    "name": "Binance",
-    "short_name": "Binance",
-    "start_url": "index.html",
-    "display": "standalone",
-    "background_color": "#22262f",
-    "theme_color": "#22262f",
-    "orientation": "portrait-primary",
-    "icons": [
-      {
-        "src": "/logo_512x512.png",
-        "type": "image/png", "sizes": "512x512"
-      }
-    ]
-  }
+  "name": "Binance",
+  "short_name": "Binance",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#22262f",
+  "theme_color": "#22262f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo_512x512.png",
+      "type": "image/png", "sizes": "512x512"
+    }
+  ]
+}

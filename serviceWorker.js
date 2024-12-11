@@ -7,6 +7,8 @@ const assets = [
   "/analysis.png",
   "/positions.js",
   "/right_arrow.png",
+  "/white_right_arrow.png",
+  "/white_left_arrow.png",
   "/USDT arrow.png",
 ]
 
