@@ -38,12 +38,12 @@
         <p id="today-pnl" style="
             top: 515px; left: 349px;
             font-size: 24pt; letter-spacing: 0.15px;
-            background-color: #22262f; color: #d85661;
+            background-color: #22262f; color: #01c082;
             /* color: skyblue; */
             padding-right: 100px;
             " 
             onclick="openPopup()"
-            >-$1.90 (-41.69%) <img style="opacity: 1; transform: translateX(20px);" width="17" src="right_arrow.png"></p>
+            >$1.90 (41.69%) <img style="opacity: 1; transform: translateX(20px);" width="17" src="right_arrow.png"></p>
         <p id="dollar-v" style="
             top: 695px; left: 72px;
             font-size: 20pt; letter-spacing: 0.5px;
@@ -55,6 +55,46 @@
             font-size: 20pt; letter-spacing: 0.5px;
             background-color: #22262f; color: #898e9b;
         ">0.000000</p>
+
+
+        <div style="
+            position: absolute;
+            top: 1220px; left: 321px;
+            display: flex;
+        ">
+            
+            <p id="leverage" style="
+                position: relative;
+                font-size: 16pt; font-weight: 100; letter-spacing: 0.7px;
+                background-color: #2c313c; color: #bfc1c6;
+                /* padding-right: 50px; */
+                /* color: green; background-color: aqua; */
+                padding: 5px 11px;
+                /* opacity: 0.3; */
+                /* visibility: hidden; */
+                border-radius: 5px;
+            ">Isolated 50X</p>
+            <div id="exc-wrapper">
+                <div id="exc1" class="exc">
+                    <div class="exc-top"></div>
+                    <div class="exc-bottom"></div>
+                </div>
+                <div id="exc2" class="exc">
+                    <div class="exc-top"></div>
+                    <div class="exc-bottom"></div>
+                </div>
+                <div id="exc3" class="exc">
+                    <div class="exc-top"></div>
+                    <div class="exc-bottom"></div>
+                </div>
+                <div id="exc4" class="exc">
+                    <div class="exc-top"></div>
+                    <div class="exc-bottom"></div>
+                </div>
+            </div>
+        </div>
+
+
 
         <p id="pnl" style="
             top: 1313px; left: 34px;
@@ -122,31 +162,113 @@
         ">98,546.73</p>
     </div>
 
-    <div id="img2">
+    <div id="img2" class="g">
         <div id="back" style="
             position: absolute;
             width: 100px;
             height: 100px;
             /* background-color: red; */
             " onclick="closePopup()"></div>
-        <div id="calendar">
-            <div class="row">
-                <div class="cal"></div>
-                <div class="cal"></div>
-                <div class="cal"></div>
-                <div class="cal"></div>
-                <div class="cal"></div>
-                <div class="cal red">
-                    <p class="date">5</p>
-                    <p class="percent red">-2,893.47</p>
-                </div>
-                <div class="cal green">
-                    <p class="date">6</p>
-                    <p class="percent green">+22,184.34</p>
-                </div>
-            </div>
+        
+        <div style="
+            position: absolute;
+            top: 203px; left: 39px;
+            display: flex;
+            align-items: baseline;
+        ">
+            <p id="today-pnl-2" style="
+                position: relative;
+                font-size: 52pt; font-weight: 700; letter-spacing: 1.7px;
+                background-color: #22262f; color: #01c082;
+                /* color: greenyellow; */
+            ">-99.98%</p>
+            <p id="today-pnl-2-usd" style="
+                position: relative;
+                background-color: #22262f; color: #01c082;
+                font-size: 24pt; letter-spacing: 0.1px;
+                /* color: yellowgreen; */
+                margin-left: 14px;
+                transform: translateY(3px);
+                padding-right: 100px;
+                
+            ">-13.53 USD</p>
+        </div>
+        
+        <p id="7d-pnl" style="
+            top: 395px; left: 35px;
+            font-size: 26pt; font-weight: 700; letter-spacing: 1.3px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: yellowgreen; */
+        ">-699.93%</p>
+        
+        <p id="7d-pnl-usd" style="
+            top: 455px; left: 35px;
+            font-size: 20pt; letter-spacing: 0.4px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: yellowgreen; */
+        ">-13.53 USD</p>
+        
+        <p id="30d-pnl" style="
+            top: 395px; left: 346px;
+            font-size: 26pt; font-weight: 700; letter-spacing: 1.3px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: yellowgreen; */
+        ">-2,999.72%</p>
+        
+        <p id="30d-pnl-usd" style="
+            top: 455px; left: 346px;
+            font-size: 20pt; letter-spacing: 0.4px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: yellowgreen; */
+        ">-13.53 USD</p>
+        
+        <p id="lifetime-pnl" style="
+            top: 395px; left: 654px;
+            font-size: 26pt; font-weight: 700; letter-spacing: 1.3px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: yellowgreen; */
+        ">-436.27%</p>
+        
+        <p id="lifetime-pnl-usd" style="
+            top: 455px; left: 654px;
+            font-size: 20pt; letter-spacing: 0.4px;
+            background-color: #22262f; color: #01c082;
+            padding-right: 50px;
+            /* color: yellowgreen; */
+        ">USD</p>
 
-            </div>
+        <p id="total-profit" style="
+            top: 664px; right: 35px;
+            font-size: 24pt; letter-spacing: 0.1px;
+            background-color: #22262f; color: white;
+            padding-left: 50px; text-align: right;
+            /* color: yellowgreen; */
+        ">248.61 USD</p>
+
+        <p id="total-loss" style="
+            top: 732px; right: 35px;
+            font-size: 24pt; letter-spacing: 0.1px;
+            background-color: #22262f; color: white;
+            padding-left: 50px; text-align: right;
+            /* color: yellowgreen; */
+        ">684.88 USD</p>
+
+        <p id="total-total" style="
+            top: 800px; right: 35px;
+            font-size: 24pt; letter-spacing: 0.1px;
+            background-color: #22262f; color: white;
+            padding-left: 50px; text-align: right;
+            /* color: yellowgreen; */
+        ">-436.27 USD</p>
+
+
+        <div id="calendar">
+            
         </div>
     </div>
     <div id="bg"></div>
@@ -233,7 +355,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        /* background-color: #22262f; */
+        background-color: #22262f;
         /* background-color: red; */
         /* opacity: 0.3; */
         
@@ -325,6 +447,37 @@
         transition: 0.1s;
     }
 
+    #exc-wrapper {
+        padding-left: 5px;
+        padding-top: 26px;
+        display: flex;
+        background-color: #22262f;
+        padding-right: 100px;
+    }
+
+    .exc {
+        margin-right: 4px;
+    }
+
+    .exc > * {
+        background-color: #858a97;
+    }
+
+    .exc-green > * {
+        background-color: #01c082;
+    }
+
+    .exc-top {
+        width: 4px;
+        height: 20px;
+    }
+
+    .exc-bottom {
+        width: 4px;
+        height: 5px;
+        margin-top: 3px;                
+    }
+
 </style>
 
 <script>
@@ -351,3 +504,4 @@
 
 </script>
 <script src="positions.js"></script>
+<script src="calendar.js"></script>

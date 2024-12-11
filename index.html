@@ -16,7 +16,7 @@
     <label for="entry_price">Entry Price </label><input type="text" id="entry_price"> <br>
     <label for="margin">Margin </label><input type="text" id="margin"> <br>
     <label for="leverage">Leverage (숫자만/3,5,15,25,50,125) </label><input type="text" id="leverage"> <br>
-    
+    <label for="exc">느낌표 (숫자만/1,2,3,4) </label><input type="text" id="exc"> <br>
     <hr>
 
     <input type="submit" onclick="onSubmit()">
@@ -25,7 +25,7 @@
 </body>
 
 <script>
-    lst = ['v', 'p', 'today_pnl', 'entry_price', 'margin', 'leverage']
+    lst = ['v', 'p', 'today_pnl', 'entry_price', 'margin', 'leverage', 'exc']
     for (let word of lst) {
         document.getElementById(word).value = localStorage.getItem(word);
     }
@@ -34,6 +34,7 @@
             localStorage.setItem(word, document.getElementById(word).value);
             // alert(localStorage.getItem(word));
         }
+        alert('저장 성공');
     }
 </script>
 

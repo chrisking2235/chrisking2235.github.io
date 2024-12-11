@@ -57,7 +57,7 @@ const leverage = parseInt(localStorage.getItem('leverage'))
 
 document.getElementById('entry_price').innerHTML = entryPrice;
 document.getElementById('margin').innerHTML = margin;
-// document.getElementById('leverage').innerHTML = leverage;
+document.getElementById('leverage').innerHTML = `Isolated ${leverage}X`;
 
 setInterval(async () => {
     try {
@@ -93,7 +93,8 @@ setInterval(async () => {
         document.getElementById("roi").innerHTML = `+${floatString(roi)}%`;
         document.getElementById("liq_price").innerHTML = `${floatString(calculatedLiquidationPrice)}`;
         document.getElementById("margin_ratio").textContent = `${floatString(marginRatio)}`;
-    
+        document.getElementById("size").innerHTML = `${floatString(margin * leverage)}`;
+
         let p = pnl;
         let a = v+p;
         
@@ -103,7 +104,8 @@ setInterval(async () => {
         document.getElementById('dollar-a').innerHTML = floatStringSix(a*usdtusd);
         document.getElementById('dollar-v').innerHTML = floatStringSix(v*usdtusd);
         document.getElementById('dollar-p').innerHTML = floatStringSix(p*usdtusd);
-
+        document.getElementById('today-pnl').innerHTML = `\$${floatString(pnl)} (${floatString((pnl/a)*100)}%)`
+            + '<img style="opacity: 1; transform: translateX(20px);" width="17" src="right_arrow.png">';
     } catch (error) {
         console.error("Error during calculation:", error);
         alert("An error occurred during calculation.");
@@ -116,4 +118,9 @@ function floatString(str) {
 
 function floatStringSix(str) {
     return parseFloat(str).toLocaleString(undefined, {'minimumFractionDigits':6,'maximumFractionDigits':6});
+}
+
+const exc = parseInt(localStorage.getItem('exc'))
+for (let i=1;i<=exc;i++) {
+    document.getElementById(`exc${i}`).classList.add('exc-green');
 }
