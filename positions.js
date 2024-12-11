@@ -94,7 +94,7 @@ setInterval(async () => {
         document.getElementById("pnl").innerHTML = `${floatString(pnl)}`;
         document.getElementById("roi").innerHTML = `+${floatString(roi)}%`;
         document.getElementById("liq_price").innerHTML = `${floatString(calculatedLiquidationPrice)}`;
-        document.getElementById("margin_ratio").innerHTML = `${floatString(marginRatio)}`;
+        document.getElementById("margin_ratio").innerHTML = `${floatString(marginRatio)}%`;
         document.getElementById("size").innerHTML = `${floatString(margin * leverage)}`;
         document.getElementById("mark_price").innerHTML = `${floatString(currentPrice)}`;
 
