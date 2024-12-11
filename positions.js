@@ -94,8 +94,10 @@ setInterval(async () => {
         document.getElementById("pnl").innerHTML = `${floatString(pnl)}`;
         document.getElementById("roi").innerHTML = `+${floatString(roi)}%`;
         document.getElementById("liq_price").innerHTML = `${floatString(calculatedLiquidationPrice)}`;
-        document.getElementById("margin_ratio").textContent = `${floatString(marginRatio)}`;
+        document.getElementById("margin_ratio").innerHTML = `${floatString(marginRatio)}`;
         document.getElementById("size").innerHTML = `${floatString(margin * leverage)}`;
+        document.getElementById("mark_price").innerHTML = `${floatString(currentPrice)}`;
+
 
         let p = pnl;
         a = v+p;
@@ -104,7 +106,7 @@ setInterval(async () => {
         document.getElementById('a').innerHTML = floatString(a);
         document.getElementById('p').innerHTML = floatString(p);
         document.getElementById('dollar-a').innerHTML = floatStringSix(a*usdtusd);
-        document.getElementById('dollar-v').innerHTML = floatStringSix(v*usdtusd);
+        document.getElementById('dollar-v').innerHTML = floatString(v*usdtusd);
         document.getElementById('dollar-p').innerHTML = floatStringSix(p*usdtusd);
         document.getElementById('today-pnl').innerHTML = `\$${floatString(pnl)} (${floatString((pnl/a)*100)}%)`
             + '<img style="opacity: 1; transform: translateX(20px);" width="17" src="right_arrow.png">';
