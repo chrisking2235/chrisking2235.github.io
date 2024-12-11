@@ -103,7 +103,7 @@ setInterval(async () => {
         a = v+p;
         
         // console.log('v: ' +v +'p: ' +p +'a: '+a)
-        document.getElementById('a').innerHTML = floatString(a);
+        document.getElementById('a').innerHTML = floatString(a) + ' <img src="USDT arrow.png" width="106" style="transform: translateY(6px);">';
         document.getElementById('p').innerHTML = floatString(p);
         document.getElementById('dollar-a').innerHTML = floatStringSix(a*usdtusd);
         document.getElementById('dollar-v').innerHTML = floatString(v*usdtusd);

@@ -11,6 +11,10 @@
             font-size: 52pt; font-weight: 700; letter-spacing: 2.4px;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
+            
+            -webkit-font-smoothing: antialiased; /* 글자 얇게 렌더링 */
+            -moz-osx-font-smoothing: grayscale; /* macOS 환경에서도 적용 */
+    
             ">0 <img src="USDT arrow.png" width="106" style="
             /* opacity: 0.5;  */
             transform: translateY(6px);"></p>
@@ -321,6 +325,7 @@
         font-family: 'Binance PLEX', "San Francisco", sans-serif;
         overflow: hidden;
         background-color: #22262f;
+
     }
 
     #img1 {
@@ -352,10 +357,26 @@
         transition: 0.5s;
         /* overflow-y: scroll; */
         touch-action: pan-y;
+
+        -webkit-overflow-scrolling: touch; /* iOS에서 스크롤 동작 활성화 */
     }
 
     #img2.go {
         transform: translateX(0);
+    }
+
+    #img2::-webkit-scrollbar {
+        display: none;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+        body {
+            overflow: hidden;
+        }
+
+        #img2::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     p {

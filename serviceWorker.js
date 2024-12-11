@@ -6,6 +6,7 @@ const assets = [
   "/KakaoTalk_20241205_142214954.jpg",
   "/analysis.png",
   "/positions.js",
+  "/calendar.js",
   "/right_arrow.png",
   "/white_right_arrow.png",
   "/white_left_arrow.png",
