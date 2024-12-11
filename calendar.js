@@ -68,9 +68,10 @@ function gen_calendar(month, range_start, range_end, ) {
             let day = cal_data[month][idx];
             let date = new Date(2024, month-1, day);
             if (!(range_start <= date && date <= range_end) || day == 0)
-                {
-                    console.log(date, day)
-                    str += '<div class="cal"></div>'}
+            {
+                console.log(date, day)
+                str += '<div class="cal"></div>'
+            }
 
             else  {
                 if (data[month][day] == 0) str += `<div class="cal" style="justify-content: center;"><p class="date" style="top: 0;">${day}</p></div>`
@@ -92,7 +93,7 @@ function gen_calendar(month, range_start, range_end, ) {
     // console.log(calendar_storage)
 }
 
-gen_calendar(9, new Date(2024, 9, 1), new Date(2024, 9, 31))
+gen_calendar(12, new Date(2024, 12-1, 1), new Date())
 // document.getElementById('calendar').innerHTML = rec[0];
 // console.log(rec[1])
 
@@ -151,10 +152,11 @@ function changePeriod(elem, idx=3) {
     document.getElementById('total-total').innerHTML = `${floatString(lst[idx].total)} USD`
 
 
-    let date1 = new Date()
-    date1.setDate(date1.getDate() - ranges[idx]);
+    let range_start = new Date()
+    range_start.setDate(range_start.getDate() - ranges[idx]);
     // console.log(date1, new Date())
-    gen_calendar(12, date1, new Date());
+    let range_end = new Date()
+    gen_calendar(12, range_start, range_end);
     loading();
 }
 

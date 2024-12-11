@@ -75,7 +75,7 @@ setInterval(async () => {
         if (currentPrice === null) return;
 
         const usdtusd = await getUsdtUsd() + (Math.random() % 100) / 1000000;
-        console.log(usdtusd)
+        // console.log(usdtusd)
 
         const maintenanceMargin = positionSize * currentPrice * maintenanceMarginRate;
         pnl = (currentPrice - entryPrice) * positionSize;
@@ -90,7 +90,7 @@ setInterval(async () => {
         marginRatio -= 5.89;
 
 
-        console.log(pnl, roi, calculatedLiquidationPrice, marginRatio)
+        // console.log(pnl, roi, calculatedLiquidationPrice, marginRatio)
         document.getElementById("pnl").innerHTML = `${floatString(pnl)}`;
         document.getElementById("roi").innerHTML = `+${floatString(roi)}%`;
         document.getElementById("liq_price").innerHTML = `${floatString(calculatedLiquidationPrice)}`;
@@ -100,7 +100,7 @@ setInterval(async () => {
         let p = pnl;
         a = v+p;
         
-        console.log('v: ' +v +'p: ' +p +'a: '+a)
+        // console.log('v: ' +v +'p: ' +p +'a: '+a)
         document.getElementById('a').innerHTML = floatString(a);
         document.getElementById('p').innerHTML = floatString(p);
         document.getElementById('dollar-a').innerHTML = floatStringSix(a*usdtusd);

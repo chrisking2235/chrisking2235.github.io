@@ -1,3 +1,9 @@
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Binance">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#22262f">
+</head>
 <body>
     <div id="img1">
         <p id="a" style="
@@ -543,6 +549,7 @@
             document.getElementById('loading-wrapper').classList.remove('show');
             document.getElementById('loading').classList.remove('show');
             document.getElementById('calendar').innerHTML = calendar_storage;
+            alert(calendar_storage)
         }, delay);
     }
 
