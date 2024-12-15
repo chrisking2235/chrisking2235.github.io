@@ -6,20 +6,53 @@
 </head>
 <body>
     <div id="img1">
+        <img class="alias" src="header.jpg"
+        style="
+            width: 100vw; height: auto;
+            position: fixed; top: 0; left: 0;
+            /* filter: hue-rotate(90deg); */
+            z-index: 4;
+        ">
+
+        <div class="main" style="display: flex; flex-direction: column; align-items: center;">
+            <video src="reload.mp4" style="
+                width: 20%;
+                height: auto;
+                z-index: 3;
+                position: relative;
+                /* filter: hue-rotate(90deg); */
+                margin-top: 90px;
+                " autoplay loop></video>
+            <img class="alias" src="futures.jpg"
+            style="
+                width: 100vw; height: auto;
+                position: relative; left: 0;
+                /* filter: hue-rotate(90deg); */
+                /* opacity: 0.5; */
+                z-index: 3;
+            ">
+        </div>
+
+        <img class="alias" src="footer.jpg"
+        style="
+            width: 100vw; height: auto;
+            position: fixed; top: 1785; left: 0; 
+            /* filter: hue-rotate(90deg); */
+            /* opacity: 0.3; */
+            z-index: 4;
+        "
+        >
         <p id="a" style="
             top: 325px; left: 34px;
             font-size: 54pt; font-weight: 600;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
-            
-            -webkit-font-smoothing: antialiased; /* 글자 얇게 렌더링 */
-            -moz-osx-font-smoothing: grayscale; /* macOS 환경에서도 적용 */
-    
             /* color: aqua; */
 
             ">2.23 <img src="USDT arrow.png" width="106" style="
             /* opacity: 0.5;  */
-            transform: translateY(6px);"></p>
+            /* transform: translateY(6px); */
+            "></p>
         <p id="v" style="
             top: 650px; left: 34px;
             font-size: 24pt; font-weight: 500;
@@ -71,10 +104,11 @@
             <p id="leverage" style="
                 position: relative;
                 font-size: 16pt; font-weight: 400; letter-spacing: 0.7px;
-                background-color: #2c313c; color: #bfc1c6;
+                background-color: #2c313c; color: white;
                 /* padding-right: 50px; */
                 /* color: green; background-color: aqua; */
-                padding: 9px 11px 1px 11px;
+                /* padding: 9px 11px 1px 11px; */
+                padding: 5px 10px;
                 /* opacity: 0.3; */
                 /* visibility: hidden; */
                 border-radius: 5px;
@@ -361,6 +395,7 @@
         transition: 0.5s;
         /* overflow-y: scroll; */
         touch-action: pan-y;
+        z-index: 5;
 
         -webkit-overflow-scrolling: touch; /* iOS에서 스크롤 동작 활성화 */
     }
@@ -472,7 +507,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 2;
+        z-index: 999;
         /* visibility: hidden; */
         pointer-events: none;
     }
@@ -548,6 +583,15 @@
         color: white;
     }
 
+
+    #img1 * {
+        /* visibility: hidden; */
+        z-index: 3;
+    }
+
+    #img1 .alias {
+        /* visibility: visible; */
+    }
 </style>
 
 <script>
