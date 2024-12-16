@@ -101,14 +101,16 @@ setInterval(async () => {
 
         let p = pnl;
         a = v+p;
+
+        const today_pnl = parseFloat(localStorage.getItem('today_pnl'))
         
         // console.log('v: ' +v +'p: ' +p +'a: '+a)
         document.getElementById('a-value').innerHTML = floatString(a);
         document.getElementById('p').innerHTML = floatString(p);
-        document.getElementById('dollar-a').innerHTML = floatStringSix(a*usdtusd);
+        document.getElementById('dollar-a').innerHTML = floatString(a*usdtusd);
         document.getElementById('dollar-v').innerHTML = floatString(v*usdtusd);
         document.getElementById('dollar-p').innerHTML = floatStringSix(p*usdtusd);
-        document.getElementById('today-pnl').innerHTML = `\$${floatString(pnl)} (${floatString((pnl/a)*100)}%)`
+        document.getElementById('today-pnl').innerHTML = `\$${floatString(today_pnl)} (${floatString((today_pnl/a)*100)}%)`
             + '<img style="opacity: 1; transform: translateX(20px);" width="17" src="right_arrow.png">';
     } catch (error) {
         console.error("Error during calculation:", error);

@@ -3,8 +3,8 @@
   "short_name": "Binance",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#22262f",
-  "theme_color": "#22262f",
+  "background_color": "#1e2630",
+  "theme_color": "#1e2630",
   "orientation": "portrait-primary",
   "icons": [
     {
