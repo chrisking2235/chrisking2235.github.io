@@ -95,7 +95,7 @@ setInterval(async () => {
         document.getElementById("roi").innerHTML = `+${floatString(roi)}%`;
         document.getElementById("liq_price").innerHTML = `${floatString(calculatedLiquidationPrice)}`;
         document.getElementById("margin_ratio").innerHTML = `${floatString(marginRatio)}%`;
-        document.getElementById("size").innerHTML = `${floatString(margin * leverage)}`;
+        document.getElementById("size").innerHTML = `${floatStringOne(margin * leverage)}`;
         document.getElementById("mark_price").innerHTML = `${floatString(currentPrice)}`;
 
 
@@ -120,6 +120,10 @@ setInterval(async () => {
 
 function floatString(str) {
     return parseFloat(str).toLocaleString(undefined, {'minimumFractionDigits':2,'maximumFractionDigits':2});
+}
+
+function floatStringOne(str) {
+    return parseFloat(str).toLocaleString(undefined, {'minimumFractionDigits':1, 'maximumFractionDigits':1});
 }
 
 function floatStringSix(str) {
