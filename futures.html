@@ -5,7 +5,7 @@
     <meta name="theme-color" content="#22262f">
 </head>
 <body>
-    <p>test: 0</p>
+    <p style="color: white; font-size: 36pt; top: 200;" id="test">test: 0</p>
     <div id="img1">
         <img class="alias" src="header.jpg"
         style="
@@ -44,7 +44,7 @@
         "
         >
         <p id="a" style="
-            top: 321px; left: 30px;
+            top: 319px; left: 30px;
             font-size: 54pt; font-weight: 600;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
@@ -84,13 +84,13 @@
             onclick="openPopup()"
             >-$1.90 (-41.69%) <img style="opacity: 1; transform: translateX(15px);" width="17" src="right_arrow.png"></p>
         <p id="dollar-v" style="
-            top: 702.1px; left: 72px;
+            top: 702px; left: 72px;
             font-size: 20pt; letter-spacing: 0.5px;
             background-color: #22262f; color: #898e9b;
             padding-right: 50px;
         ">0.001263</span></p>
         <p id="dollar-p" style="
-            top: 702.1px; left: 532px;
+            top: 702px; left: 532px;
             font-size: 20pt; letter-spacing: 0.5px;
             background-color: #22262f; color: #898e9b;
         ">0.000000</p>
@@ -110,7 +110,11 @@
                 /* padding-right: 50px; */
                 color: green; background-color: aqua;
                 /* padding: 8px 11px 5px; */
-                padding: 5px 15px;
+                /* padding: 5px 14px; */
+                padding-top: 3px;
+                padding-right: 14px;
+                padding-bottom: 5px;
+                padding-left: 14px;
                 opacity: 0.3;
                 /* visibility: hidden; */
                 border-radius: 5px;
@@ -628,7 +632,7 @@
     }
 
     window.addEventListener('scroll', (e) => {
-
+        document.getElementById('test').innerHTML = window.scrollY;
     })
 
 </script>
