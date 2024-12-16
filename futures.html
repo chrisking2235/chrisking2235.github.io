@@ -45,15 +45,15 @@
         >
         <p id="a" style="
         /*319*/
-            top: 307px; left: 30px;
+            top: 308px; left: 30px;
             font-size: 54pt; font-weight: 600;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
             /* color: aqua; */
 
-            ">2.23 <img src="USDT arrow.png" width="106" style="
+            "><span id="a-value" style="margin-top: 1px;">2.23</span> <img src="USDT arrow.png" width="106" class="usdt" style="
             /* opacity: 0.5;  */
-            /* transform: translateY(6px); */
+            transform: translateY(6px);
             "></p>
         <p id="v" style="
             top: 651px; left: 34px;
@@ -601,6 +601,7 @@
     #img1 .alias {
         /* visibility: visible; */
     }
+
 </style>
 
 <script>
@@ -632,7 +633,7 @@
         }, delay);
     }
 
-    document.querySelector('body').addEventListener('scroll', (e) => {
+    window.addEventListener('scroll', (e) => {
         try {
             alert(window.scrollY)
         } catch (err) {
