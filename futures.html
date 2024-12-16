@@ -44,7 +44,8 @@
         "
         >
         <p id="a" style="
-            top: 319px; left: 30px;
+        /*319*/
+            top: 280px; left: 30px;
             font-size: 54pt; font-weight: 600;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
@@ -111,10 +112,10 @@
                 color: green; background-color: aqua;
                 /* padding: 8px 11px 5px; */
                 /* padding: 5px 14px; */
-                padding-top: 3px;
+                padding-top: 1px;
                 padding-right: 14px;
                 padding-bottom: 5px;
-                padding-left: 14px;
+                padding-left: 13px;
                 opacity: 0.3;
                 /* visibility: hidden; */
                 border-radius: 5px;
@@ -632,7 +633,11 @@
     }
 
     window.addEventListener('scroll', (e) => {
-        document.getElementById('test').innerHTML = window.scrollY;
+        try {
+            document.getElementById('test').innerHTML = window.scrollY;
+        } catch (err) {
+            alert(err)
+        }
     })
 
 </script>
