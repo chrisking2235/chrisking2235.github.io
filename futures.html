@@ -5,7 +5,7 @@
     <meta name="theme-color" content="#22262f">
 </head>
 <body>
-    <p style="color: white; font-size: 36pt; top: 200;" id="test">test: 0</p>
+    <!-- <p style="color: white; font-size: 36pt; top: 200;" id="test">test: 0</p> -->
     <div id="img1">
         <img class="alias" src="header.jpg"
         style="
@@ -45,7 +45,7 @@
         >
         <p id="a" style="
         /*319*/
-            top: 315px; left: 30px;
+            top: 310px; left: 30px;
             font-size: 54pt; font-weight: 600;
             background-color: #22262f; color: #ececef;
             padding-right: 100px;
@@ -634,8 +634,7 @@
 
     window.addEventListener('scroll', (e) => {
         try {
-            alert('you scrolled!')
-            document.getElementById('test').innerHTML = window.scrollY;
+            alert(window.scrollY)
         } catch (err) {
             alert(err)
         }
